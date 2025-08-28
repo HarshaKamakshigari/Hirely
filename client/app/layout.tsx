@@ -33,9 +33,34 @@
 //   );
 // }
 
+// import type { Metadata } from 'next';
+// import './globals.css';
+// import AuthProvider from '../context/AuthContext'; // <-- import
+
+// export const metadata: Metadata = {
+//   title: 'Hirely',
+//   description: 'Job Portal with RBAC & Secure Docs',
+// };
+
+// export default function RootLayout({
+//   children,
+// }: {
+//   children: React.ReactNode;
+// }) {
+//   return (
+//     <html lang="en">
+//       <body>
+//         <AuthProvider>
+//           {children}
+//         </AuthProvider>
+//       </body>
+//     </html>
+//   );
+// }
+
 import type { Metadata } from 'next';
 import './globals.css';
-import AuthProvider from '../context/AuthContext'; // <-- import
+import { AuthProvider } from '../context/AuthContext'; // <-- named import
 
 export const metadata: Metadata = {
   title: 'Hirely',

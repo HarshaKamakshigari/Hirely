@@ -87,7 +87,7 @@
 // // Start server
 // const PORT = process.env.PORT || 5000;
 // app.listen(PORT, () => {
-//   console.log(`Server running on port ${PORT}`);
+//   console.log(Server running on port ${PORT});
 // });
 
 
@@ -98,6 +98,8 @@ import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import authRoutes from './routes/auth.js';
 import uploadRoutes from './routes/upload.js';
+import router from './routes/users.js';
+import jobRouter from './routes/jobs.js';
 
 dotenv.config();
 
@@ -115,6 +117,8 @@ connectDB();
 // Routes
 app.use('/auth', authRoutes);
 app.use('/upload', uploadRoutes);
+app.use('/users', router);
+app.use('/jobs', jobRouter);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
